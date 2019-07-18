@@ -1,0 +1,1343 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-basic-info-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-basic-info-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-basic-info-service1
+        image: 10.141.211.160:5000/master/cluster-ts-admin-basic-info-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18767
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-order-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-order-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-order-service1
+        image: 10.141.211.160:5000/master/cluster-ts-admin-order-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16112
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-route-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-route-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-route-service1
+        image: 10.141.211.160:5000/master/cluster-ts-admin-route-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16113
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-travel-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-travel-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-travel-service1
+        image: 10.141.211.160:5000/master/cluster-ts-admin-travel-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16114
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-admin-user-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-admin-user-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-admin-user-service1
+        image: 10.141.211.160:5000/master/cluster-ts-admin-user-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16115
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-assurance-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-assurance-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-assurance-service1
+        image: 10.141.211.160:5000/master/cluster-ts-assurance-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18888
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-basic-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-basic-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-basic-service1
+        image: 10.141.211.160:5000/master/cluster-ts-basic-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 15680
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-cancel-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-cancel-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-cancel-service1
+        image: 10.141.211.160:5000/master/cluster-ts-cancel-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18885
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-config-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-config-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-config-service1
+        image: 10.141.211.160:5000/master/cluster-ts-config-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 15679
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-consign-price-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-consign-price-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-consign-price-service1
+        image: 10.141.211.160:5000/master/cluster-ts-consign-price-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16110
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-consign-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-consign-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-consign-service1
+        image: 10.141.211.160:5000/master/cluster-ts-consign-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16111
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-contacts-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-contacts-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-contacts-service1
+        image: 10.141.211.160:5000/master/cluster-ts-contacts-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12347
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-execute-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-execute-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-execute-service1
+        image: 10.141.211.160:5000/master/cluster-ts-execute-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12386
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-food-map-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-food-map-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-food-map-service1
+        image: 10.141.211.160:5000/master/cluster-ts-food-map-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18855
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-food-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-food-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-food-service1
+        image: 10.141.211.160:5000/master/cluster-ts-food-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18856
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-inside-payment-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-inside-payment-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-inside-payment-service1
+        image: 10.141.211.160:5000/master/cluster-ts-inside-payment-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18673
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-login-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-login-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-login-service1
+        image: 10.141.211.160:5000/master/cluster-ts-login-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12342
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-news-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-login-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-news-service1
+        image: 10.141.211.160:5000/master/cluster-ts-news-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12862
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-notification-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-notification-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-notification-service1
+        image: 10.141.211.160:5000/master/cluster-ts-notification-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 17853
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-order-other-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-order-other-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-order-other-service1
+        image: 10.141.211.160:5000/master/cluster-ts-order-other-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12032
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-order-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-order-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-order-service1
+        image: 10.141.211.160:5000/master/cluster-ts-order-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12031
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-payment-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-payment-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-payment-service1
+        image: 10.141.211.160:5000/master/cluster-ts-payment-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 19001
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-preserve-other-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-preserve-other-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-preserve-other-service1
+        image: 10.141.211.160:5000/master/cluster-ts-preserve-other-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 14569
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-preserve-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-preserve-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-preserve-service1
+        image: 10.141.211.160:5000/master/cluster-ts-preserve-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 14568
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-price-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-price-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-price-service1
+        image: 10.141.211.160:5000/master/cluster-ts-price-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16579
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-rebook-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-rebook-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-rebook-service1
+        image: 10.141.211.160:5000/master/cluster-ts-rebook-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18886
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-register-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-register-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-register-service1
+        image: 10.141.211.160:5000/master/cluster-ts-register-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12344
+
+-----
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-route-plan-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-route-plan-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-route-plan-service1
+        image: 10.141.211.160:5000/master/cluster-ts-route-plan-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 14578
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-route-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-route-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-route-service1
+        image: 10.141.211.160:5000/master/cluster-ts-route-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 11178
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-seat-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-seat-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-seat-service1
+        image: 10.141.211.160:5000/master/cluster-ts-seat-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 18898
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-security-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-security-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-security-service1
+        image: 10.141.211.160:5000/master/cluster-ts-security-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 11188
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-sso-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-sso-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-sso-service1
+        image: 10.141.211.160:5000/master/cluster-ts-sso-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12349
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-station-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-station-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-station-service1
+        image: 10.141.211.160:5000/master/cluster-ts-station-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12345
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-ticket-office-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-ticket-office-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-ticket-office-service1
+        image: 10.141.211.160:5000/master/cluster-ts-ticket-office-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16108
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-ticketinfo-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-ticketinfo-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-ticketinfo-service1
+        image: 10.141.211.160:5000/master/cluster-ts-ticketinfo-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 15681
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-train-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-train-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-train-service1
+        image: 10.141.211.160:5000/master/cluster-ts-train-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 14567
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel2-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel2-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel2-service1
+        image: 10.141.211.160:5000/master/cluster-ts-travel2-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16346
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel-plan-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel-plan-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel-plan-service1
+        image: 10.141.211.160:5000/master/cluster-ts-travel-plan-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 14322
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel-service1
+        image: 10.141.211.160:5000/master/cluster-ts-travel-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 12346
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-ui-dashboard
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-ui-dashboard
+        version: v1
+    spec:
+      containers:
+      - name: ts-ui-dashboard
+        image: 10.141.211.160:5000/master/cluster-ts-ui-dashboard
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-verification-code-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-verification-code-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-verification-code-service1
+        image: 10.141.211.160:5000/master/cluster-ts-verification-code-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 15678
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-voucher-service1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-voucher-service1
+        version: v1
+    spec:
+      containers:
+      - name: ts-voucher-service1
+        image: 10.141.211.160:5000/master/cluster-ts-voucher-service1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 16101
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+        version: v1
+    spec:
+      containers:
+      - name: redis
+        image: 10.141.211.160:5000/master/cluster-ts-redis
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-account-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-account-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-account-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-route-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-route-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-route-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-contacts-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-contacts-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-contacts-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-order-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-order-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-order-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-order-other-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-order-other-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-order-other-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-config-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-config-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-config-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-station-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-station-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-station-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-train-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-train-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-train-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-travel2-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-travel2-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-travel2-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-price-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-price-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-price-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-security-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-security-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-security-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-inside-payment-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-inside-payment-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-inside-payment-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-payment-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-payment-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-payment-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-assurance-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-assurance-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-assurance-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-ticket-office-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-ticket-office-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-ticket-office-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-voucher-mysql
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-voucher-mysql
+        version: v1
+    spec:
+      containers:
+      - name: ts-voucher-mysql
+        image: 10.141.211.160:5000/master/cluster-ts-mysql
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-food-map-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-food-map-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-food-map-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-consign-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-consign-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-consign-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6379
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-consign-price-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-consign-price-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-consign-price-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ts-food-mongo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ts-food-mongo
+        version: v1
+    spec:
+      containers:
+      - name: ts-food-mongo
+        image: 10.141.211.160:5000/master/cluster-ts-mongo
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 27017
+

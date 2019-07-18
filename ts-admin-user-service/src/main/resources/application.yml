@@ -1,0 +1,9 @@
+server:
+  port: 16115
+
+spring:
+  application:
+    name: ts-admin-user-service1
+
+swagger:
+  controllerPackage: adminuser.controller

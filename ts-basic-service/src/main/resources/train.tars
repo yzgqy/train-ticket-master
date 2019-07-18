@@ -1,0 +1,40 @@
+module Train
+{
+	struct TrainTypeTars
+	{
+    	0 optional string id = "";
+    	1 optional int economyClass = 0;
+        2 optional int confortClass = 0;
+        3 optional int averageSpeed = 0;
+	}
+
+    struct ResponseTrainType
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional TrainTypeTars data = null;
+    }
+
+    struct ResponseTrainTypes
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<TrainTypeTars> data = null;
+    }
+
+    interface TrainController
+    {
+        string home()
+
+        ResponseTrainType create(TrainTypeTars trainType)
+
+        ResponseTrainType retrieve(string id)
+
+        ResponseTrainType update(TrainTypeTars trainType)
+
+        ResponseTrainType delete(string id)
+
+        ResponseTrainTypes query()
+    }
+
+}

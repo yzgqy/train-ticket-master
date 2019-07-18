@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ts-consign-service1
+  data:
+    mongodb:
+#      host: ts-consign-mongo
+      database: ts
+      port: 27017
+      host: 127.0.0.1
+
+
+# HTTP Server
+server:
+  port: 16111
+
+swagger:
+  controllerPackage: consign.controller

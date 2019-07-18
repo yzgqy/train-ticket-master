@@ -1,0 +1,17 @@
+server:
+  port: 18855
+
+spring:
+  application:
+    name: ts-food-map-service1
+  data:
+    mongodb:
+#      host: ts-food-map-mongo
+#      username: user
+#      password: ${MONGODB_PASSWORD}
+      database: ts
+      port: 27017
+      host: 127.0.0.1
+
+swagger:
+  controllerPackage: food.controller

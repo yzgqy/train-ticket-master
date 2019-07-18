@@ -1,0 +1,60 @@
+module Station
+{
+	struct StationTars
+	{
+    	0 optional string id = "";
+    	1 optional string name = "";
+        2 optional int stayTime = 0;
+	}
+
+    struct ResponseStations
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<StationTars> data = null;
+    }
+
+    struct ResponseStation
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional StationTars data = null;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = null;
+    }
+
+    struct ResponseStringList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<string> data = null;
+    }
+
+
+    interface StationController
+    {
+        string home()
+
+        ResponseStations query()
+
+        ResponseStation create(StationTars station)
+
+        ResponseStation update(StationTars station)
+
+        ResponseStation delete(StationTars station)
+
+        ResponseString queryForStationId(string stationName)
+
+        ResponseStringList queryForIdBatch(vector<string> stationNameList)
+
+        ResponseString queryById(string stationId)
+
+        ResponseStringList queryForNameBatch(vector<string> stationIdList)
+    }
+
+}

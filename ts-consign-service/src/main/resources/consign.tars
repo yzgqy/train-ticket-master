@@ -1,0 +1,48 @@
+module Consign
+{
+	struct ConsignTars
+	{
+    	0 optional string id = "";
+    	1 optional string orderId = "";
+        2 optional string accountId = "";
+        3 optional string handleDate = "";
+        4 optional string targetDate = "";
+        5 optional string from = "";
+        6 optional string to = "";
+        7 optional string consignee = "";
+        8 optional string phone = "";
+        9 optional double weight = 0;
+        10 optional bool isWithin = false;
+        11 optional double price = 0;
+	}
+
+    struct ResponseConsign
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional ConsignTars data = null;
+    }
+
+    struct ResponseConsignList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<ConsignTars> data = null;
+    }
+
+    interface ConsignController
+    {
+        string home()
+
+        ResponseConsign insertConsign(ConsignTars request)
+
+        ResponseConsign updateConsign(ConsignTars request)
+
+        ResponseConsignList findByAccountId(string id)
+
+        ResponseConsign findByOrderId(string id)
+
+        ResponseConsignList findByConsignee(string consignee)
+    }
+
+}

@@ -1,0 +1,41 @@
+module PriceConfig
+{
+	struct PriceConfigTars
+	{
+    	0 optional string id = "";
+    	1 optional string trainType = "";
+        2 optional string routeId = "";
+        3 optional double basicPriceRate = 0;
+        4 optional double firstClassPriceRate = 0;
+	}
+
+    struct ResponsePriceConfig
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional PriceConfigTars data = null;
+    }
+
+    struct ResponsePriceConfigs
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<PriceConfigTars> data = null;
+    }
+
+    interface PriceController
+    {
+        string home()
+
+        ResponsePriceConfig query(string routeId, string trainType)
+
+        ResponsePriceConfigs queryAll()
+
+        ResponsePriceConfig create(PriceConfigTars info)
+
+        ResponsePriceConfig delete(PriceConfigTars info)
+
+        ResponsePriceConfig update(PriceConfigTars info)
+    }
+
+}

@@ -1,0 +1,82 @@
+module Food
+{
+	struct FoodOrderTars
+	{
+    	0 optional string id = "";
+    	1 optional string orderId = "";
+        2 optional int foodType = 0;
+        3 optional string stationName = "";
+        4 optional string storeName = "";
+        5 optional string foodName = "";
+        6 optional double price = 0;
+	}
+
+    struct ResponseFoodOrder
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional FoodOrderTars data = null;
+    }
+
+    struct ResponseFoodOrderList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<FoodOrderTars> data = null;
+    }
+
+    struct ResponseAllTripFoodList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<AllTripFoodTars> data = null;
+    }
+
+    struct AllTripFoodTars
+    {
+        0 optional vector<TrainFoodTars> trainFoodList = null;
+        1 optional map<string,vector<FoodStoreTars>>  foodStoreListMap = null;
+    }
+
+    struct TrainFoodTars
+    {
+        0 optional string id = "";
+        1 optional string tripId = "";
+        2 optional vector<FoodTars> foodList = null;
+    }
+
+    struct FoodStoreTars
+    {
+        0 optional string id = "";
+        1 optional string stationId = "";
+        2 optional string storeName = "";
+        3 optional string telephone = "";
+        4 optional string businessTime = "";
+        5 optional double deliveryFee = 0;
+        6 optional vector<FoodTars> foodList = null;
+    }
+
+    struct FoodTars
+    {
+        0 optional string foodName = "";
+        1 optional double price = 0;
+    }
+
+    interface FoodController
+    {
+        string home()
+
+        ResponseFoodOrderList findAllFoodOrder()
+
+        ResponseFoodOrder createFoodOrder(FoodOrderTars addFoodOrder)
+
+        ResponseFoodOrder updateFoodOrder(FoodOrderTars updateFoodOrder)
+
+        ResponseFoodOrder deleteFoodOrder(string orderId)
+
+        ResponseFoodOrder findFoodOrderByOrderId(string orderId)
+
+        ResponseAllTripFoodList getAllFood(string date, string startStation,string endStation, string tripId)
+    }
+
+}

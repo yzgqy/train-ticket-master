@@ -1,0 +1,74 @@
+module Basic
+{
+	struct TravelTars
+	{
+    	0 optional TripTars trip = null;
+    	1 optional string startingPlace = "";
+        2 optional string endPlace = "";
+        3 optional long departureTime = 0;
+	}
+
+    struct TripTars
+    {
+        0 optional TripIdTars tripId = null;
+        1 optional string trainTypeId = "";
+        2 optional string routeId = "";
+        3 optional string startingStationId = "";
+        4 optional string stationsId = "";
+        5 optional string terminalStationId = "";
+        6 optional long startingTime = 0;
+        7 optional long endTime = 0;
+    }
+
+    struct TripIdTars
+    {
+        0 optional TypeTars type = null;
+        1 optional string number = "";
+    }
+
+    struct TypeTars
+    {
+        0 optional string name = "";
+        1 optional int index = 0;
+    }
+
+    struct TravelResultTars
+    {
+        0 optional bool status = false;
+        1 optional double percent = 0;
+        2 optional TrainTypeTars trainType;
+        3 optional map<string,string> prices;
+    }
+
+    struct TrainTypeTars
+    {
+        0 optional string id = "";
+        1 optional int economyClass = 0;
+        2 optional int confortClass = 0;
+        3 optional int averageSpeed = 0;
+    }
+
+    struct ResponseTravelResult
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional TravelResultTars data = null;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = "";
+    }
+
+    interface BasicController
+    {
+        string home()
+
+        ResponseTravelResult queryForTravel(TravelTars info)
+
+        ResponseString queryForStationId(string stationName)
+    }
+
+}

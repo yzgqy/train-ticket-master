@@ -1,0 +1,24 @@
+module AdminRoute
+{
+	struct RouteInfoTars
+	{
+    	0 optional string loginId = "";
+    	1 optional string startStation = "";
+        2 optional string endStation = "";
+        3 optional string stationList = "";
+        4 optional string distanceList = "";
+        5 optional string id = "";
+	}
+
+    interface AdminRouteController
+    {
+        string home()
+
+        ResponseRoutes getAllRoutes()
+
+        ResponseRoute addRoute(RouteInfoTars request)
+
+        ResponseString deleteRoute(string routeId)
+    }
+
+}

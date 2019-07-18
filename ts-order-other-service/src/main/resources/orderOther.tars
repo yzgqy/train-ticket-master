@@ -1,0 +1,161 @@
+module OrderOther
+{
+	struct SeatTars
+	{
+    	0 optional long travelDate = 0;
+    	1 optional string trainNumber = "";
+        2 optional string startStation = "";
+        3 optional string destStation = "";
+        4 optional int seatType = 0;
+	}
+
+    struct OrderTars
+    {
+        0 optional string id = "";
+        1 optional long boughtDate = 0;
+        2 optional long travelDate = 0;
+        3 optional long travelTime = 0;
+        4 optional string accountId = "";
+        5 optional string contactsName = "";
+        6 optional int documentType = 0;
+        7 optional string contactsDocumentNumber = "";
+        8 optional string trainNumber = "";
+        9 optional int coachNumber = 0;
+        10 optional int seatClass = 0;
+        11 optional string seatNumber = "";
+        12 optional string from = "";
+        13 optional string to = "";
+        14 optional int status = 0;
+        15 optional string price = "";
+    }
+
+    struct QueryInfoTars
+    {
+        0 optional string loginId = "";
+        1 optional long travelDateStart = 0;
+        2 optional long travelDateEnd = 0;
+        3 optional long boughtDateStart = 0;
+        4 optional long boughtDateEnd = 0;
+        5 optional int state = 0;
+        6 optional bool enableTravelDateQuery = false;
+        7 optional bool enableBoughtDateQuery = false;
+        8 optional bool enableStateQuery = false;
+    }
+
+    struct SoldTicketTars
+    {
+        0 optional long travelDate = 0;
+        1 optional string trainNumber = "";
+        2 optional int noSeat = 0;
+        3 optional int businessSeat = 0;
+        4 optional int firstClassSeat = 0;
+        5 optional int secondClassSeat = 0;
+        6 optional int hardSeat = 0;
+        7 optional int softSeat = 0;
+        8 optional int hardBed = 0;
+        9 optional int softBed = 0;
+        10 optional int highSoftBed = 0;
+    }
+
+    struct TicketTars
+    {
+        0 optional int seatNo = 0;
+        1 optional string startStation = "";
+        2 optional string destStation = "";
+    }
+
+    struct LeftTicketInfoTars
+    {
+        0 optional vector<TicketTars> soldTickets = null;
+    }
+
+    struct ResponseOrder
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional OrderTars data = null;
+    }
+    struct ResponseOrderList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<OrderTars> data = null;
+    }
+
+    struct ResponseOrderList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<OrderTars> data = null;
+    }
+
+    struct ResponseSoldTicket
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional SoldTicketTars data = null;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = null;
+    }
+
+    struct OrderSecurityTars
+    {
+        0 optional int orderNumInLastOneHour = 0;
+        1 optional int orderNumOfValidOrder = 0;
+    }
+
+    struct ResponseOrderSecurity
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional OrderSecurityTars data = null;
+    }
+
+    struct ResponseLeftTicketInfo
+        {
+            0 optional int status = 0;
+            1 optional string msg = "";
+            2 optional LeftTicketInfoTars data = null;
+        }
+
+    interface OrderOtherController
+    {
+        string home()
+
+        ResponseLeftTicketInfo getTicketListByDateAndTripId(SeatTars seatRequest)
+
+        ResponseOrder createNewOrder(OrderTars createOrder)
+
+        ResponseOrder addcreateNewOrder(OrderTars order)
+
+        ResponseOrderList queryOrders(QueryInfoTars qi)
+
+        ResponseOrderList queryOrdersForRefresh(QueryInfoTars qi)
+
+        ResponseSoldTicket calculateSoldTicket(int travelDate, string trainNumber)
+
+        ResponseString getOrderPrice(string orderId)
+
+        ResponseOrder payOrder(string orderId)
+
+        ResponseOrder getOrderById(string orderId)
+
+        ResponseOrder modifyOrder(string orderId, int status)
+
+        ResponseOrderSecurity securityInfoCheck(long checkDate,string accountId)
+
+        ResponseOrder saveOrderInfo(OrderTars orderInfo)
+
+        ResponseOrder updateOrder(OrderTars order)
+
+        ResponseString deleteOrder(string orderId)
+
+        ResponseOrderList findAllOrder()
+    }
+
+}

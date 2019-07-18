@@ -1,0 +1,76 @@
+module FoodMap
+{
+    struct FoodTars
+    {
+        0 optional string foodName = "";
+        1 optional double price = 0;
+    }
+
+	struct FoodStoreTars
+	{
+    	0 optional string id = "";
+    	1 optional string stationId = "";
+        2 optional string storeName = "";
+        3 optional string telephone = "";
+        4 optional string businessTime = "";
+        5 optional double deliveryFee = 0;
+        6 optional vector<FoodTars> foodList = null;
+	}
+
+    struct TrainFoodTars
+    {
+        0 optional string id = "";
+        1 optional string tripId = "";
+        2 optional vector<FoodTars> foodList = null;
+    }
+
+
+    struct ResponseFoodStores
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<FoodStoreTars> data = null;
+    }
+
+    struct ResponseFoodStore
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional FoodStoreTars data = null;
+    }
+
+    struct ResponseTrainFoods
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<TrainFoodTars> data = null;
+    }
+
+    struct ResponseTrainFood
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional TrainFoodTars data = null;
+    }
+
+    interface FoodStoreController
+    {
+        string home()
+
+        ResponseFoodStores getAllFoodStores()
+
+        ResponseFoodStores getFoodStoresOfStation(string stationId)
+
+        ResponseFoodStores getFoodStoresByStationIds(vector<string> stationIdList)
+    }
+
+    interface TrainFoodController
+    {
+        string home()
+
+        ResponseTrainFoods getAllTrainFood()
+
+        ResponseTrainFoods getTrainFoodOfTrip(string tripId)
+    }
+
+}

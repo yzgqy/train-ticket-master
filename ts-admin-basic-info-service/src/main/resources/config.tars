@@ -1,0 +1,40 @@
+module Config
+{
+	struct ConfigTars
+	{
+    	0 optional string name = "";
+    	1 optional string value = "";
+        2 optional string description = "";
+	}
+
+
+    struct ResponseConfigs
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<ConfigTars> data = null;
+    }
+
+    struct ResponseConfig
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional ConfigTars data = null;
+    }
+
+    interface ConfigController
+    {
+        string home()
+
+        ResponseConfigs queryAll()
+
+        ResponseConfig createConfig(ConfigTars info)
+
+        ResponseConfig updateConfig(ConfigTars info)
+
+        ResponseConfig deleteConfig(string configName)
+
+        ResponseConfig retrieve(string configName)
+    }
+
+}

@@ -1,0 +1,59 @@
+module Route
+{
+	struct RouteInfoTars
+	{
+    	0 optional string id = "";
+    	1 optional string startStation = "";
+        2 optional string endStation = "";
+        3 optional string stationList = "";
+        4 optional string distanceList = "";
+	}
+
+    struct RouteTars
+    {
+        0 optional string id = "";
+        1 optional vector<string> stations = null;
+        2 optional vector<int> distances = null;
+        3 optional string startStationId = "";
+        4 optional string terminalStationId = "";
+    }
+
+
+    struct ResponseRoute
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional RouteTars data = null;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = "";
+    }
+
+
+    struct ResponseRoutes
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<RouteTars> data = null;
+    }
+
+    interface RouteController
+    {
+        string home()
+
+        ResponseRoute createAndModifyRoute(RouteInfoTars createAndModifyRouteInfo)
+
+        ResponseString deleteRoute(string routeId)
+
+        ResponseRoute queryById(string routeId)
+
+        ResponseRoutes queryAll()
+
+        ResponseRoutes queryByStartAndTerminal(string startId, string terminalId)
+    }
+
+}

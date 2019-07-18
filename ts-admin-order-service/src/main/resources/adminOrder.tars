@@ -1,0 +1,41 @@
+module AdminOrder
+{
+    struct Response
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+    }
+
+    struct OrderTars
+    {
+        0 optional string id = "";
+        1 optional long boughtDate = 0;
+        2 optional long travelDate = 0;
+        3 optional long travelTime = 0;
+        4 optional string accountId = "";
+        5 optional string contactsName = "";
+        6 optional int documentType = 0;
+        7 optional string contactsDocumentNumber = "";
+        8 optional string trainNumber = "";
+        9 optional int coachNumber = 0;
+        10 optional int seatClass = 0;
+        11 optional string seatNumber = "";
+        12 optional string from = "";
+        13 optional string to = "";
+        14 optional int status = 0;
+        15 optional string price = "";
+    }
+    interface AdminOrderController
+    {
+        string home()
+
+        Response getAllOrders(out vector<OrderTars> outData)
+
+        Response addOrder(OrderTars request, out OrderTars outData)
+
+        Response updateOrder(OrderTars request, out OrderTars outData)
+
+        Response deleteOrder(string orderId, string trainNumber, out OrderTars outData)
+    }
+
+}

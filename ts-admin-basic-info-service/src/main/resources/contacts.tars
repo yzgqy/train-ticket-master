@@ -1,0 +1,54 @@
+module Contacts
+{
+	struct ContactsTars
+	{
+    	0 optional string id = "";
+    	1 optional string accountId = "";
+        2 optional string name = "";
+        3 optional int documentType = 0;
+        4 optional string documentNumber = "";
+        5 optional string phoneNumber = "";
+	}
+
+
+    struct ResponseContactsList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<ContactsTars> data = null;
+    }
+
+    struct ResponseContacts
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional ContactsTars data = null;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = "";
+    }
+    
+    interface ContactsController
+    {
+        string home()
+
+        ResponseContactsList getAllContacts()
+
+        ResponseContacts createNewContacts(ContactsTars aci)
+
+        ResponseContacts createNewContactsAdmin(ContactsTars aci)
+
+        ResponseString deleteContacts(string contactsId)
+
+        ResponseContacts modifyContacts(ContactsTars info)
+
+        ResponseContactsList findContactsByAccountId(string accountId)
+
+        ResponseContacts getContactsByContactsId(string id)
+    }
+
+}

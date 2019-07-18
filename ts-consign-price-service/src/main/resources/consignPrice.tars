@@ -1,0 +1,48 @@
+module ConsignPrice
+{
+	struct ConsignPriceTars
+	{
+    	0 optional string id = "";
+    	1 optional int index = 0;
+        2 optional double initialWeight = 0;
+        3 optional double initialPrice = 0;
+        4 optional double withinPrice = 0;
+        5 optional double beyondPrice = 0;
+	}
+
+
+    struct ResponseDouble
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional double data = 0;
+    }
+
+    struct ResponseString
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional string data = "";
+    }
+
+    struct ResponseConsignPrice
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional ConsignPriceTars data = null;
+    }
+    
+    interface ConsignPriceController
+    {
+        string home()
+
+        ResponseDouble getPriceByWeightAndRegion(string weight, string isWithinRegion)
+
+        ResponseString getPriceInfo()
+
+        ResponseConsignPrice getPriceConfig()
+
+        ResponseConsignPrice modifyPriceConfig(ConsignPriceTars priceConfig)
+    }
+
+}

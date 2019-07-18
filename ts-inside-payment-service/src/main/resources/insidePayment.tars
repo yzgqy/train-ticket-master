@@ -1,0 +1,71 @@
+module InsidePayment
+{
+	struct PaymentInfoTars
+	{
+    	0 optional string userId = "";
+    	1 optional string orderId = "";
+        2 optional string tripId = "";
+        3 optional string price = "";
+	}
+
+    struct AccountInfoTars
+    {
+        0 optional string userId = "";
+        1 optional string money = "";
+    }
+
+    struct ResponsePaymentInfo
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional PaymentInfoTars data = null;
+    }
+
+    struct ResponsePaymentInfoList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<PaymentInfoTars> data = null;
+    }
+
+    struct ResponseAccountInfo
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional AccountInfoTars data = null;
+    }
+
+    struct BalanceTars
+    {
+        0 optional string userId = "";
+        1 optional string balance = "";
+    }
+    struct ResponseBalanceList
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<BalanceTars> data = null;
+    }
+
+    interface InsidePaymentController
+    {
+        string home()
+
+        ResponsePaymentInfo pay(PaymentInfoTars info)
+
+        ResponseAccountInfo createAccount(AccountInfoTars info)
+
+        ResponsePaymentInfo addMoney(string userId, string money)
+
+        ResponsePaymentInfoList queryPayment()
+
+        ResponseBalanceList queryAccount()
+
+        ResponsePaymentInfo drawBack(string userId, string money)
+
+        ResponsePaymentInfo payDifference(PaymentInfoTars info)
+
+        ResponsePaymentInfo queryAddMoney()
+    }
+
+}

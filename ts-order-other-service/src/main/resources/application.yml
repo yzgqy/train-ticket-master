@@ -1,0 +1,42 @@
+# HTTP Server
+server:
+  port: 12032  # HTTP (Tomcat) port
+
+spring:
+  application:
+    name: ts-order-other-service1
+  data:
+    mongodb:
+#      host: ts-order-other-mongo
+#      username: user
+#      password: ${MONGODB_PASSWORD}
+      database: ts
+      port: 27017
+      host: 127.0.0.1
+
+#  rabbitmq:
+#    host: rabbitmq
+#    listener:
+#      retry:
+#        enabled: false
+#        max-attempts: 1
+#    template:
+#      retry:
+#        enabled: false
+#        max-attempts: 1
+#  cloud:
+#    stream:
+#      bindings:
+#        output:
+#          # group: ts-return-cancel
+#          destination: ts-order-other-exchange
+#          contentType: application/json
+#          binder: rabbit
+#        input:
+#          group: ts-order-other-service1
+#          destination: ts-order-other-exchange
+#          contentType: application/json
+#          binder: rabbit
+
+swagger:
+  controllerPackage: other.controller

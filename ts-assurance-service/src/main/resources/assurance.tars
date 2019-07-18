@@ -1,0 +1,75 @@
+module Assurance
+{
+	struct PlainAssuranceTars
+	{
+    	0 optional string id = "";
+    	1 optional string orderId = "";
+        2 optional int typeIndex = 0;
+        3 optional string typeName = "";
+        4 optional double typePrice = 0;
+	}
+
+    struct AssuranceTypeTars
+    {
+        0 optional int index = "";
+        1 optional string name = "";
+        2 optional double price = 0;
+    }
+
+    struct AssuranceTypeBeanTars
+    {
+        0 optional int index = "";
+        1 optional string name = "";
+        2 optional double price = 0;
+    }
+
+	struct AssuranceTars
+	{
+	    0 optional string id = "";
+	    1 optional string orderId = "";
+	    2 optional AssuranceTypeTars type = null;
+	}
+
+    struct ResponsePlainAssurances
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<PlainAssuranceTars> data = null;
+    }
+
+    struct ResponseAssuranceTypeBeans
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<AssuranceTypeBeanTars> data = null;
+    }
+
+    struct ResponseAssurance
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional AssuranceTars data = null;
+    }
+
+    interface AssuranceController
+    {
+        String home()
+
+        ResponsePlainAssurances getAllAssurances()
+
+        ResponseAssuranceTypeBeans getAllAssuranceType()
+
+        ResponseAssurance deleteAssurance(string assuranceId)
+
+        ResponseAssurance deleteAssuranceByOrderId(string orderId)
+
+        ResponseAssurance modifyAssurance(string assuranceId, string orderId, int typeIndex)
+
+        ResponseAssurance createNewAssurance(int typeIndex, string orderId)
+
+        ResponseAssurance getAssuranceById(string assuranceId)
+
+        ResponseAssurance findAssuranceByOrderId(string orderId)
+    }
+
+}

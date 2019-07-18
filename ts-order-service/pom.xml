@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fdse.microservice</groupId>
+    <artifactId>ts-order-service</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>ts-order-service</name>
+
+    <parent>
+        <groupId>org.services</groupId>
+        <artifactId>ts-service</artifactId>
+        <version>0.1.0</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.services</groupId>
+            <artifactId>ts-common</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        <!-- tars -->
+        <dependency>
+            <groupId>com.tencent.tars</groupId>
+            <artifactId>tars-spring-boot-starter</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Class-Path>conf/</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- 启动类 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>order.OrderApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--<plugin>-->
+                <!--<groupId>com.tencent.tars</groupId>-->
+                <!--<artifactId>tars-maven-plugin</artifactId>-->
+                <!--<version>1.6.1</version>-->
+                <!--<configuration>-->
+                    <!--<tars2JavaConfig>-->
+                        <!--&lt;!&ndash; tars文件位置 &ndash;&gt;-->
+                        <!--<tarsFiles>-->
+                            <!--<tarsFile>${basedir}/src/main/resources/order.tars</tarsFile>-->
+                        <!--</tarsFiles>-->
+                        <!--&lt;!&ndash; 源文件编码 &ndash;&gt;-->
+                        <!--<tarsFileCharset>UTF-8</tarsFileCharset>-->
+                        <!--&lt;!&ndash; 生成服务端代码 &ndash;&gt;-->
+                        <!--<servant>true</servant>-->
+                        <!--&lt;!&ndash; 生成源代码编码 &ndash;&gt;-->
+                        <!--<charset>UTF-8</charset>-->
+                        <!--&lt;!&ndash; 生成的源代码目录 &ndash;&gt;-->
+                        <!--<srcPath>${basedir}/src/main/java</srcPath>-->
+                        <!--&lt;!&ndash; 生成源代码包前缀 &ndash;&gt;-->
+                        <!--<packagePrefixName>order.tars.</packagePrefixName>-->
+                    <!--</tars2JavaConfig>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>com.tencent.tars</groupId>
+                <artifactId>tars-maven-plugin</artifactId>
+                <version>1.6.1</version>
+                <configuration>
+                    <tars2JavaConfig>
+                        <!-- tars文件位置 -->
+                        <tarsFiles>
+                            <tarsFile>${basedir}/src/main/resources/station.tars</tarsFile>
+                        </tarsFiles>
+                        <!-- 源文件编码 -->
+                        <tarsFileCharset>UTF-8</tarsFileCharset>
+                        <!-- 生成服务端代码 -->
+                        <servant>false</servant>
+                        <!-- 生成源代码编码 -->
+                        <charset>UTF-8</charset>
+                        <!-- 生成的源代码目录 -->
+                        <srcPath>${basedir}/src/main/java</srcPath>
+                        <!-- 生成源代码包前缀 -->
+                        <packagePrefixName>order.tars.rpc.</packagePrefixName>
+                    </tars2JavaConfig>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

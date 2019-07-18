@@ -1,0 +1,54 @@
+module AdminBasicInfo
+{
+    struct Response
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+    }
+
+    interface AdminBasicInfoController
+    {
+        string home()
+
+        Response getAllContacts(out vector<ContactsTars> outData)
+
+        Response deleteContacts(string contactsId, out string outData)
+
+        Response modifyContacts(ContactsTars mci, out ContactsTars outData)
+
+        Response addContacts(ContactsTars c, out ContactsTars outData)
+
+        Response getAllStations(out vector<StationTars> outData)
+
+        Response deleteStation(StationTars s, out StationTars outData)
+
+        Response modifyStation(StationTars s, out StationTars outData)
+
+        Response addStation(StationTars s, out StationTars outData)
+
+        Response getAllTrains(out vector<TrainTypeTars> outData)
+
+        Response deleteTrain(string id, out TrainTypeTars outData)
+
+        Response modifyTrain(TrainTypeTars t, out TrainTypeTars outData)
+
+        Response addTrain(TrainTypeTars t, out TrainTypeTars outData)
+
+        Response getAllConfigs(out vector<ConfigTars> outData)
+
+        Response deleteConfig(string name, out ConfigTars outData)
+
+        Response modifyConfig(ConfigTars c, out ConfigTars outData)
+
+        Response addConfig(ConfigTars c, out ConfigTars outData)
+
+        Response getAllPrices(out vector<PriceConfigTars> outData)
+
+        Response deletePrice(PriceConfigTars pi, out PriceConfigTars outData)
+
+        Response modifyPrice(PriceConfigTars pi, out PriceConfigTars outData)
+
+        Response addPrice(PriceConfigTars pi, out PriceConfigTars outData)
+    }
+
+}

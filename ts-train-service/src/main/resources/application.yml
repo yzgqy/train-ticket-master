@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ts-train-service1
+  data:
+    mongodb:
+#      host: ts-train-mongo
+#      username: user
+#      password: ${MONGODB_PASSWORD}
+      database: ts
+      port: 27017
+      host: 127.0.0.1
+
+# HTTP Server
+server:
+  port: 14567  # HTTP (Tomcat) port
+
+swagger:
+  controllerPackage: train.controller

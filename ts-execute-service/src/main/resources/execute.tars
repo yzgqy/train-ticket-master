@@ -1,0 +1,18 @@
+module Execute
+{
+    struct Response
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+    }
+
+    interface ExecuteControlller
+    {
+        string home()
+
+        Response executeTicket(string orderId)
+
+        Response collectTicket(string orderId)
+    }
+
+}
