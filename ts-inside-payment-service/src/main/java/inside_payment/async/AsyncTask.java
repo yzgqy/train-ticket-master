@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 
-@Component  
-public class AsyncTask {  
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());  
-    
+@Component
+public class AsyncTask {
+    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
 	private RestTemplate restTemplate;
 
@@ -25,5 +25,5 @@ public class AsyncTask {
         System.out.println("[Inside Payment Service][Async Task] 收到直接返回调用Value:" + value);
         return new AsyncResult<>(value);
     }
-    
-}  
+
+}

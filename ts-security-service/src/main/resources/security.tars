@@ -1,0 +1,32 @@
+module Security
+{
+    struct Response
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+    }
+
+    struct SecurityConfigTars
+    {
+        0 optional string id = "";
+        1 optional string name = "";
+        2 optional string value = "";
+        3 optional string description = "";
+    }
+
+    interface SecurityController
+    {
+        string home()
+
+        Response findAllSecurityConfig(out vector<SecurityConfigTars> outData)
+
+        Response create(SecurityConfigTars info, out SecurityConfigTars outData)
+
+        Response update(SecurityConfigTars info, out SecurityConfigTars outData)
+
+        Response delete(string id, out string outData)
+
+        Response check(string accountId, out string outData)
+    }
+
+}

@@ -33,6 +33,12 @@
             <artifactId>ts-common</artifactId>
             <version>0.1.0</version>
         </dependency>
+        <!-- tars -->
+        <dependency>
+            <groupId>com.tencent.tars</groupId>
+            <artifactId>tars-spring-boot-starter</artifactId>
+            <version>1.6.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -41,6 +47,85 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Class-Path>conf/</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- 启动类 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>security.SecurityApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--服务端-->
+            <plugin>
+                <groupId>com.tencent.tars</groupId>
+                <artifactId>tars-maven-plugin</artifactId>
+                <version>1.6.1</version>
+                <configuration>
+                    <tars2JavaConfig>
+                        <!-- tars文件位置 -->
+                        <tarsFiles>
+                            <tarsFile>${basedir}/src/main/resources/security.tars</tarsFile>
+                        </tarsFiles>
+                        <!-- 源文件编码 -->
+                        <tarsFileCharset>UTF-8</tarsFileCharset>
+                        <!-- 生成服务端代码 -->
+                        <servant>true</servant>
+                        <!-- 生成源代码编码 -->
+                        <charset>UTF-8</charset>
+                        <!-- 生成的源代码目录 -->
+                        <srcPath>${basedir}/src/main/java</srcPath>
+                        <!-- 生成源代码包前缀 -->
+                        <packagePrefixName>security.tars.</packagePrefixName>
+                    </tars2JavaConfig>
+                </configuration>
+            </plugin>
+
+
+            <!--客户端：-->
+            <!--<plugin>-->
+                <!--<groupId>com.tencent.tars</groupId>-->
+                <!--<artifactId>tars-maven-plugin</artifactId>-->
+                <!--<version>1.6.1</version>-->
+                <!--<configuration>-->
+                    <!--<tars2JavaConfig>-->
+                        <!--&lt;!&ndash; tars文件位置 &ndash;&gt;-->
+                        <!--<tarsFiles>-->
+                            <!--<tarsFile>${basedir}/src/main/resources/orderOther.tars</tarsFile>-->
+                        <!--</tarsFiles>-->
+                        <!--&lt;!&ndash; 源文件编码 &ndash;&gt;-->
+                        <!--<tarsFileCharset>UTF-8</tarsFileCharset>-->
+                        <!--&lt;!&ndash; 生成服务端代码 &ndash;&gt;-->
+                        <!--<servant>false</servant>-->
+                        <!--&lt;!&ndash; 生成源代码编码 &ndash;&gt;-->
+                        <!--<charset>UTF-8</charset>-->
+                        <!--&lt;!&ndash; 生成的源代码目录 &ndash;&gt;-->
+                        <!--<srcPath>${basedir}/src/main/java</srcPath>-->
+                        <!--&lt;!&ndash; 生成源代码包前缀 &ndash;&gt;-->
+                        <!--<packagePrefixName>security.tars.rpc.</packagePrefixName>-->
+                    <!--</tars2JavaConfig>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 

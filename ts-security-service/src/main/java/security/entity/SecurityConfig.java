@@ -2,6 +2,8 @@ package security.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.mongodb.core.mapping.Document;
+import security.tars.security.SecurityConfigTars;
+
 import java.util.UUID;
 
 @Document(collection = "security_config")
@@ -50,5 +52,14 @@ public class SecurityConfig {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public SecurityConfigTars toTars(){
+        SecurityConfigTars securityConfigTars = new SecurityConfigTars();
+        securityConfigTars.setId(this.id.toString());
+        securityConfigTars.setDescription(this.description);
+        securityConfigTars.setName(this.name);
+        securityConfigTars.setValue(this.value);
+        return securityConfigTars;
     }
 }

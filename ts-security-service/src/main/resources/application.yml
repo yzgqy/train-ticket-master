@@ -3,11 +3,12 @@ spring:
     name: ts-security-service1
   data:
     mongodb:
-      host: ts-security-mongo
+#      host: ts-security-mongo
 #      username: user
 #      password: ${MONGODB_PASSWORD}
       database: ts
       port: 27017
+      host: 127.0.0.1
 
 # HTTP Server
 server:
