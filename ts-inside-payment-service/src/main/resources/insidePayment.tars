@@ -1,5 +1,27 @@
 module InsidePayment
 {
+    struct PaymentTypeTars
+	{
+    	0 optional string name = "";
+    	1 optional int index = 0;
+	}
+
+	struct InsidePaymentTars
+	{
+    	0 optional string id = "";
+    	1 optional string orderId = "";
+        2 optional string userId = "";
+        3 optional string price = "";
+        4 optional PaymentTypeTars type = null;
+	}
+
+	struct ResponseInsidePaymentList
+        {
+            0 optional int status = 0;
+            1 optional string msg = "";
+            2 optional vector<InsidePaymentTars> data = null;
+        }
+
 	struct PaymentInfoTars
 	{
     	0 optional string userId = "";
@@ -57,7 +79,7 @@ module InsidePayment
 
         ResponsePaymentInfo addMoney(string userId, string money)
 
-        ResponsePaymentInfoList queryPayment()
+        ResponseInsidePaymentList queryPayment()
 
         ResponseBalanceList queryAccount()
 

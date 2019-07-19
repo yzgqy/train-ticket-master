@@ -2,7 +2,6 @@ package inside_payment.tars.insidepayment.service;
 
 import inside_payment.entity.AccountInfo;
 import inside_payment.entity.Payment;
-import inside_payment.entity.PaymentInfo;
 import inside_payment.tars.insidepayment.*;
 
 /**
@@ -17,7 +16,7 @@ public interface InsidePaymentTarsService {
 
     ResponsePaymentInfo addMoney(String userId,String money);
 
-    ResponsePaymentInfoList queryPayment();
+    ResponseInsidePaymentList queryPayment();
 
     ResponseBalanceList queryAccount();
 

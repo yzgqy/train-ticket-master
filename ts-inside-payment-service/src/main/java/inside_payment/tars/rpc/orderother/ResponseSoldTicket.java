@@ -3,7 +3,7 @@
 // TARS version 1.0.1.
 // **********************************************************************
 
-package inside_payment.tars.insidepayment;
+package inside_payment.tars.rpc.orderother;
 
 import com.qq.tars.protocol.util.*;
 import com.qq.tars.protocol.annotation.*;
@@ -11,14 +11,14 @@ import com.qq.tars.protocol.tars.*;
 import com.qq.tars.protocol.tars.annotation.*;
 
 @TarsStruct
-public class ResponseBalanceList {
+public class ResponseSoldTicket {
 
 	@TarsStructProperty(order = 0, isRequire = false)
 	public int status = 0;
 	@TarsStructProperty(order = 1, isRequire = false)
 	public String msg = "";
 	@TarsStructProperty(order = 2, isRequire = false)
-	public java.util.List<BalanceTars> data = null;
+	public SoldTicketTars data = null;
 
 	public int getStatus() {
 		return status;
@@ -36,18 +36,18 @@ public class ResponseBalanceList {
 		this.msg = msg;
 	}
 
-	public java.util.List<BalanceTars> getData() {
+	public SoldTicketTars getData() {
 		return data;
 	}
 
-	public void setData(java.util.List<BalanceTars> data) {
+	public void setData(SoldTicketTars data) {
 		this.data = data;
 	}
 
-	public ResponseBalanceList() {
+	public ResponseSoldTicket() {
 	}
 
-	public ResponseBalanceList(int status, String msg, java.util.List<BalanceTars> data) {
+	public ResponseSoldTicket(int status, String msg, SoldTicketTars data) {
 		this.status = status;
 		this.msg = msg;
 		this.data = data;
@@ -71,10 +71,10 @@ public class ResponseBalanceList {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof ResponseBalanceList)) {
+		if (!(obj instanceof ResponseSoldTicket)) {
 			return false;
 		}
-		ResponseBalanceList other = (ResponseBalanceList) obj;
+		ResponseSoldTicket other = (ResponseSoldTicket) obj;
 		return (
 			TarsUtil.equals(status, other.status) &&
 			TarsUtil.equals(msg, other.msg) &&
@@ -92,17 +92,15 @@ public class ResponseBalanceList {
 		}
 	}
 
-	static java.util.List<BalanceTars> cache_data;
+	static SoldTicketTars cache_data;
 	static { 
-		cache_data = new java.util.ArrayList<BalanceTars>();
-		BalanceTars var_3 = new BalanceTars();
-		cache_data.add(var_3);
+		cache_data = new SoldTicketTars();
 	}
 
 	public void readFrom(TarsInputStream _is) {
 		this.status = _is.read(status, 0, false);
 		this.msg = _is.readString(1, false);
-		this.data = (java.util.List<BalanceTars>) _is.read(cache_data, 2, false);
+		this.data = (SoldTicketTars) _is.read(cache_data, 2, false);
 	}
 
 }

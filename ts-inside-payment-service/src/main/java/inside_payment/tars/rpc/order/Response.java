@@ -3,7 +3,7 @@
 // TARS version 1.0.1.
 // **********************************************************************
 
-package inside_payment.tars.insidepayment;
+package inside_payment.tars.rpc.order;
 
 import com.qq.tars.protocol.util.*;
 import com.qq.tars.protocol.annotation.*;
@@ -11,14 +11,12 @@ import com.qq.tars.protocol.tars.*;
 import com.qq.tars.protocol.tars.annotation.*;
 
 @TarsStruct
-public class ResponseBalanceList {
+public class Response {
 
 	@TarsStructProperty(order = 0, isRequire = false)
 	public int status = 0;
 	@TarsStructProperty(order = 1, isRequire = false)
 	public String msg = "";
-	@TarsStructProperty(order = 2, isRequire = false)
-	public java.util.List<BalanceTars> data = null;
 
 	public int getStatus() {
 		return status;
@@ -36,21 +34,12 @@ public class ResponseBalanceList {
 		this.msg = msg;
 	}
 
-	public java.util.List<BalanceTars> getData() {
-		return data;
+	public Response() {
 	}
 
-	public void setData(java.util.List<BalanceTars> data) {
-		this.data = data;
-	}
-
-	public ResponseBalanceList() {
-	}
-
-	public ResponseBalanceList(int status, String msg, java.util.List<BalanceTars> data) {
+	public Response(int status, String msg) {
 		this.status = status;
 		this.msg = msg;
-		this.data = data;
 	}
 
 	@Override
@@ -59,7 +48,6 @@ public class ResponseBalanceList {
 		int result = 1;
 		result = prime * result + TarsUtil.hashCode(status);
 		result = prime * result + TarsUtil.hashCode(msg);
-		result = prime * result + TarsUtil.hashCode(data);
 		return result;
 	}
 
@@ -71,14 +59,13 @@ public class ResponseBalanceList {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof ResponseBalanceList)) {
+		if (!(obj instanceof Response)) {
 			return false;
 		}
-		ResponseBalanceList other = (ResponseBalanceList) obj;
+		Response other = (Response) obj;
 		return (
 			TarsUtil.equals(status, other.status) &&
-			TarsUtil.equals(msg, other.msg) &&
-			TarsUtil.equals(data, other.data) 
+			TarsUtil.equals(msg, other.msg) 
 		);
 	}
 
@@ -87,22 +74,12 @@ public class ResponseBalanceList {
 		if (null != msg) {
 			_os.write(msg, 1);
 		}
-		if (null != data) {
-			_os.write(data, 2);
-		}
 	}
 
-	static java.util.List<BalanceTars> cache_data;
-	static { 
-		cache_data = new java.util.ArrayList<BalanceTars>();
-		BalanceTars var_3 = new BalanceTars();
-		cache_data.add(var_3);
-	}
 
 	public void readFrom(TarsInputStream _is) {
 		this.status = _is.read(status, 0, false);
 		this.msg = _is.readString(1, false);
-		this.data = (java.util.List<BalanceTars>) _is.read(cache_data, 2, false);
 	}
 
 }

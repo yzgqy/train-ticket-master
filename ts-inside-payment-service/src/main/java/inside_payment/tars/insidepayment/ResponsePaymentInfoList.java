@@ -95,8 +95,8 @@ public class ResponsePaymentInfoList {
 	static java.util.List<PaymentInfoTars> cache_data;
 	static { 
 		cache_data = new java.util.ArrayList<PaymentInfoTars>();
-		PaymentInfoTars var_1 = new PaymentInfoTars();
-		cache_data.add(var_1);
+		PaymentInfoTars var_2 = new PaymentInfoTars();
+		cache_data.add(var_2);
 	}
 
 	public void readFrom(TarsInputStream _is) {

@@ -20,7 +20,7 @@ public interface InsidePaymentControllerServant {
 
 	public ResponsePaymentInfo addMoney(String userId, String money);
 
-	public ResponsePaymentInfoList queryPayment();
+	public ResponseInsidePaymentList queryPayment();
 
 	public ResponseBalanceList queryAccount();
 

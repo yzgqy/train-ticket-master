@@ -1,0 +1,51 @@
+module Payment
+{
+	struct PaymentTars
+	{
+    	0 optional string id = "";
+    	1 optional string orderId = "";
+        2 optional string userId = "";
+        3 optional string price = "";
+	}
+
+    struct MoneyTars
+    {
+        0 optional string userId = "";
+        1 optional string money = "";
+    }
+
+
+    struct ResponsePayment
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional PaymentTars data = null;
+    }
+
+    struct ResponsePayments
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional vector<PaymentTars> data = null;
+    }
+
+
+    struct ResponseMoney
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+        2 optional MoneyTars data = null;
+    }
+
+    interface PaymentController
+    {
+        string home()
+
+        ResponsePayment pay(PaymentTars info)
+
+        ResponseMoney addMoney(PaymentTars info)
+
+        ResponsePayments query()
+    }
+
+}

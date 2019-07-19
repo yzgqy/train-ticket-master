@@ -1,5 +1,8 @@
 package inside_payment.entity;
 
+import inside_payment.tars.insidepayment.InsidePaymentTars;
+import inside_payment.tars.insidepayment.PaymentTypeTars;
+import inside_payment.tars.rpc.payment.PaymentTars;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -74,4 +77,19 @@ public class Payment {
     public void setType(PaymentType type) {
         this.type = type;
     }
+
+    public InsidePaymentTars toTars(){
+        InsidePaymentTars paymentTars = new InsidePaymentTars();
+        paymentTars.setId(this.id);
+        paymentTars.setOrderId(this.orderId);
+        paymentTars.setPrice(this.price);
+        paymentTars.setUserId(this.userId);
+        PaymentTypeTars paymentTypeTars = new PaymentTypeTars();
+        paymentTypeTars.setIndex(this.type.getIndex());
+        paymentTypeTars.setName(this.type.getName());
+        paymentTars.setType(paymentTypeTars);
+        return paymentTars;
+
+    }
+
 }

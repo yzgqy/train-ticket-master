@@ -11,14 +11,14 @@ import com.qq.tars.protocol.tars.*;
 import com.qq.tars.protocol.tars.annotation.*;
 
 @TarsStruct
-public class ResponseBalanceList {
+public class ResponseInsidePaymentList {
 
 	@TarsStructProperty(order = 0, isRequire = false)
 	public int status = 0;
 	@TarsStructProperty(order = 1, isRequire = false)
 	public String msg = "";
 	@TarsStructProperty(order = 2, isRequire = false)
-	public java.util.List<BalanceTars> data = null;
+	public java.util.List<InsidePaymentTars> data = null;
 
 	public int getStatus() {
 		return status;
@@ -36,18 +36,18 @@ public class ResponseBalanceList {
 		this.msg = msg;
 	}
 
-	public java.util.List<BalanceTars> getData() {
+	public java.util.List<InsidePaymentTars> getData() {
 		return data;
 	}
 
-	public void setData(java.util.List<BalanceTars> data) {
+	public void setData(java.util.List<InsidePaymentTars> data) {
 		this.data = data;
 	}
 
-	public ResponseBalanceList() {
+	public ResponseInsidePaymentList() {
 	}
 
-	public ResponseBalanceList(int status, String msg, java.util.List<BalanceTars> data) {
+	public ResponseInsidePaymentList(int status, String msg, java.util.List<InsidePaymentTars> data) {
 		this.status = status;
 		this.msg = msg;
 		this.data = data;
@@ -71,10 +71,10 @@ public class ResponseBalanceList {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof ResponseBalanceList)) {
+		if (!(obj instanceof ResponseInsidePaymentList)) {
 			return false;
 		}
-		ResponseBalanceList other = (ResponseBalanceList) obj;
+		ResponseInsidePaymentList other = (ResponseInsidePaymentList) obj;
 		return (
 			TarsUtil.equals(status, other.status) &&
 			TarsUtil.equals(msg, other.msg) &&
@@ -92,17 +92,17 @@ public class ResponseBalanceList {
 		}
 	}
 
-	static java.util.List<BalanceTars> cache_data;
+	static java.util.List<InsidePaymentTars> cache_data;
 	static { 
-		cache_data = new java.util.ArrayList<BalanceTars>();
-		BalanceTars var_3 = new BalanceTars();
-		cache_data.add(var_3);
+		cache_data = new java.util.ArrayList<InsidePaymentTars>();
+		InsidePaymentTars var_1 = new InsidePaymentTars();
+		cache_data.add(var_1);
 	}
 
 	public void readFrom(TarsInputStream _is) {
 		this.status = _is.read(status, 0, false);
 		this.msg = _is.readString(1, false);
-		this.data = (java.util.List<BalanceTars>) _is.read(cache_data, 2, false);
+		this.data = (java.util.List<InsidePaymentTars>) _is.read(cache_data, 2, false);
 	}
 
 }
