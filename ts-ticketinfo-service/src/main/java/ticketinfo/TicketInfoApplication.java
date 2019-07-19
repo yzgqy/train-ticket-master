@@ -1,5 +1,6 @@
 package ticketinfo;
 
+import com.qq.tars.spring.annotation.EnableTarsServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -16,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAsync
 @IntegrationComponentScan
 @EnableSwagger2
+@EnableTarsServer
 public class TicketInfoApplication {
 
     public static void main(String[] args) {

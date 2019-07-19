@@ -1,0 +1,18 @@
+module TicketInfo
+{
+    struct Response
+    {
+        0 optional int status = 0;
+        1 optional string msg = "";
+    }
+
+    interface TicketInfoController
+    {
+        string home()
+
+        Response queryForTravel(TravelTars info, out TravelResultTars outData)
+
+        Response queryForStationId(string name, out string outData)
+    }
+
+}
